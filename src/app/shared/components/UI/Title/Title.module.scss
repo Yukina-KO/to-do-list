@@ -1,0 +1,16 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: white;
+  padding: 24px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    color: rgb(177, 177, 177);
+  }
+}

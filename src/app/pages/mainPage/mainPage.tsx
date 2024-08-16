@@ -1,16 +1,12 @@
-import { User } from "../../../../server/getUsers";
+import ActionItem from "@/app/shared/components/ActionItem/ActionItem";
+import styles from "./page.module.scss";
+import { CREATE_USER_URL, USERS_URL } from "@/app/shared/const/urls";
 
-interface MainPageProperties {
-  data: User[] | undefined;
-}
-export const MainPage: React.FC<MainPageProperties> = ({ data }) => {
+export const MainPage: React.FC = () => {
   return (
-    <div>
-      {data?.map((user) => (
-        <li key={user.id}>
-          {user.name} - {user.email} - {user.phone}
-        </li>
-      ))}
+    <div className={styles.page}>
+      <ActionItem href={USERS_URL}>Пользователи</ActionItem>
+      <ActionItem href={CREATE_USER_URL}>Я новый пользователь</ActionItem>
     </div>
   );
 };
