@@ -11,24 +11,24 @@ export interface TaskState {
   tasks: Task[];
   isLoading: boolean;
   error: null | string;
-  fetchUsers: () => Promise<void>;
+  fetchTasks: (id: number) => Promise<void>;
 }
 
-export const usersStore = create<TaskState>((get, id) => ({
+export const taskStore = create<TaskState>((set) => ({
   tasks: [],
   isLoading: false,
   error: null,
-  fetchUsers: async () => {
-    get({ isLoading: true, error: null });
+  fetchTasks: async (id) => {
+    set({ isLoading: true, error: null });
     try {
-      const response = await fetch(`https://my-json-server.typicode.com/Yukina-KO/to-do-list/tasks`);
+      const response = await fetch(`https://my-json-server.typicode.com/Yukina-KO/to-do-list/tasks?user_id=${id}`);
       if (!response.ok) {
         throw new Error("Failed to fetch");
       }
       const data = await response.json();
-      get({ tasks: data[0], isLoading: false });
+      set({ tasks: data, isLoading: false });
     } catch (error) {
-      get({ error: (error as Error).message, isLoading: false });
+      set({ error: (error as Error).message, isLoading: false });
     }
   },
 }));

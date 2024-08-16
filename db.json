@@ -21,62 +21,61 @@
     {
       "user_id": 1,
       "id": 1,
-      "title": "delectus aut autem",
+      "title": "Выбор или альтернативный подход",
       "completed": false
     },
     {
       "user_id": 1,
       "id": 2,
-      "title": "quis ut nam facilis et officia qui",
+      "title": "Найти простое и эффективное решение",
       "completed": false
     },
     {
       "user_id": 1,
       "id": 3,
-      "title": "fugiat veniam minus",
+      "title": "Устранить недостатки и сбои",
       "completed": false
     },
     {
       "user_id": 1,
       "id": 4,
-      "title": "et porro tempora",
+      "title": "Использовать временные решения",
       "completed": true
     },
     {
       "user_id": 1,
       "id": 5,
-      "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
+      "title": "Суммировать данные и подготовить отчет",
       "completed": false
     },
-
     {
       "user_id": 2,
       "id": 21,
-      "title": "suscipit repellat esse quibusdam voluptatem incidunt",
+      "title": "Решить проблему с клиентским запросом",
       "completed": false
     },
     {
       "user_id": 2,
       "id": 22,
-      "title": "distinctio vitae autem nihil ut molestias quo",
+      "title": "Оптимизировать процессы для исключения проблем",
       "completed": true
     },
     {
       "user_id": 2,
       "id": 23,
-      "title": "et itaque necessitatibus maxime molestiae qui quas velit",
+      "title": "Идентифицировать основные потребности клиентов",
       "completed": false
     },
     {
       "user_id": 2,
       "id": 24,
-      "title": "adipisci non ad dicta qui amet quaerat doloribus ea",
+      "title": "Разработать стратегию для улучшения качества",
       "completed": false
     },
     {
       "user_id": 2,
       "id": 25,
-      "title": "voluptas quo tenetur perspiciatis explicabo natus",
+      "title": "Создать отчет по результатам анализов",
       "completed": true
     }
   ]

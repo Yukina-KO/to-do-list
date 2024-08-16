@@ -1,3 +1,4 @@
+"use client";
 import styles from "./UserItem.module.scss";
 
 interface UserItemProperties extends React.ButtonHTMLAttributes<HTMLButtonElement> {
