@@ -10,7 +10,7 @@
     "server": "json-server --watch db.json --port 3001"
   },
   "dependencies": {
-    "concurrently": "^8.2.2",
+    "@mui/base": "^5.0.0-beta.40",
     "json-server": "^1.0.0-beta.1",
     "next": "14.2.5",
     "react": "^18",
