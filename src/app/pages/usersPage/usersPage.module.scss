@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  .userList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: calc(100vh - 100px);
+    padding: 24px;
+    background-color: rgb(36, 36, 36);
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+}

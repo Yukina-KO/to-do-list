@@ -1,0 +1,10 @@
+.wrapper {
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(128, 126, 126);
+  }
+}

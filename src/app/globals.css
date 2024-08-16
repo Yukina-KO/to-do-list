@@ -25,3 +25,9 @@ a {
 li {
   list-style: none;
 }
+
+button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}

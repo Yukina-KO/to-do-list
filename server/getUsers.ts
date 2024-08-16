@@ -8,14 +8,14 @@ export type User = {
   phone: string;
 };
 
-interface UserState {
+export interface UserState {
   users: User[];
   isLoading: boolean;
   error: null | string;
   fetchUsers: () => Promise<void>;
 }
 
-export const useUsersStore = create<UserState>((set) => ({
+export const usersStore = create<UserState>((set) => ({
   users: [],
   isLoading: false,
   error: null,
