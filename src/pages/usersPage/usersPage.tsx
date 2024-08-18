@@ -4,6 +4,8 @@ import styles from "./usersPage.module.scss";
 import UserItem from "@/shared/components/UserItem/UserItem";
 import TaskItem from "@/shared/components/TaskItem/TaskItem";
 import { User } from "@/services/userService";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface UsersPageProperties {
   data: User[];
@@ -14,12 +16,12 @@ interface UsersPageProperties {
 export const UsersPage: React.FC<UsersPageProperties> = ({ data, isLoading, error }) => {
   const { tasks, fetchTasks, deleteTask } = taskStore();
   const getUserTasks = (id: number) => {
+    console.log(data);
     fetchTasks(id);
   };
 
   const deleteUserTask = (id: number) => {
     deleteTask(id);
-    console.log(tasks);
   };
   return (
     <div className={styles.container}>
@@ -40,14 +42,18 @@ export const UsersPage: React.FC<UsersPageProperties> = ({ data, isLoading, erro
               return a.completed ? 1 : -1;
             })
             .map((task, index) => (
-              <li className={styles.task} key={task.id}>
-                <TaskItem count={index + 1} completed={task.completed}>
-                  {task.title}
-                </TaskItem>
+              <div className={styles.task} key={task.id}>
+                <Link href={`/task_info/${task.id}`}>
+                  <li>
+                    <TaskItem count={index + 1} completed={task.completed}>
+                      {task.title}
+                    </TaskItem>
+                  </li>
+                </Link>
                 <button onClick={() => deleteUserTask(task.id)} className={styles.deleteButton} type="button">
                   X
                 </button>
-              </li>
+              </div>
             ))}
         </ol>
       )}
