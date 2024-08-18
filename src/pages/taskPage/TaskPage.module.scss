@@ -1,0 +1,11 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .container {
+    width: 800px;
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+}
