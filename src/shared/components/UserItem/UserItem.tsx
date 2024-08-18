@@ -1,12 +1,11 @@
-"use client";
 import styles from "./UserItem.module.scss";
 
-interface UserItemProperties extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface UserItemProperties {
   children: React.ReactNode;
 }
 
 export const UserItem: React.FC<UserItemProperties> = ({ children }) => {
-  return <button className={styles.wrapper}>{children}</button>;
+  return <div className={styles.wrapper}>{children}</div>;
 };
 
 export default UserItem;

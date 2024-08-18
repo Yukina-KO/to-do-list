@@ -1,7 +1,7 @@
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 24px;
   .userList {
     display: flex;
@@ -13,5 +13,21 @@
     border-radius: 10px;
     overflow: hidden;
     overflow-y: auto;
+  }
+}
+
+.task {
+  display: flex;
+  gap: 12px;
+
+  .deleteButton {
+    padding: 8px 16px;
+    background-color: #ff8787;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    &:hover {
+      background-color: #ff5e5e;
+    }
   }
 }

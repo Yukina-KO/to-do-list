@@ -1,6 +1,6 @@
-import ActionItem from "@/app/shared/components/ActionItem/ActionItem";
-import styles from "./page.module.scss";
-import { CREATE_USER_URL, USERS_URL } from "@/app/shared/const/urls";
+import ActionItem from "@/shared/components/ActionItem/ActionItem";
+import styles from "./mainPage.module.scss";
+import { CREATE_USER_URL, USERS_URL } from "@/shared/const/urls";
 
 export const MainPage: React.FC = () => {
   return (

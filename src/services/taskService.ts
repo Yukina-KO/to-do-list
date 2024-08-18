@@ -4,7 +4,7 @@ export type Task = {
   userId: number;
   id: number;
   title: string;
-  completed: string;
+  completed: boolean;
 };
 
 export interface TaskState {
@@ -12,6 +12,7 @@ export interface TaskState {
   isLoading: boolean;
   error: null | string;
   fetchTasks: (id: number) => Promise<void>;
+  deleteTask: (id: number) => Promise<void>;
 }
 
 export const taskStore = create<TaskState>((set) => ({
@@ -27,6 +28,23 @@ export const taskStore = create<TaskState>((set) => ({
       }
       const data = await response.json();
       set({ tasks: data, isLoading: false });
+    } catch (error) {
+      set({ error: (error as Error).message, isLoading: false });
+    }
+  },
+  deleteTask: async (id) => {
+    set({ isLoading: true, error: null });
+    try {
+      const response = await fetch(`https://my-json-server.typicode.com/Yukina-KO/to-do-list/tasks/${id}`, {
+        method: "DELETE",
+      });
+      if (!response.ok) {
+        throw new Error("Failed to delete");
+      }
+      set((state) => ({
+        tasks: state.tasks.filter((task) => task.id !== id),
+        isLoading: false,
+      }));
     } catch (error) {
       set({ error: (error as Error).message, isLoading: false });
     }

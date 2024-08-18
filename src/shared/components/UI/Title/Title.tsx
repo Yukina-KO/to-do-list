@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./Title.module.scss";
-import { DEFAULT_URL } from "@/app/shared/const/urls";
+import { DEFAULT_URL } from "@/shared/const/urls";
 
 export const Title: React.FC = () => {
   return (
