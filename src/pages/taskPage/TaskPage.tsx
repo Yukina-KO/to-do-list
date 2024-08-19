@@ -30,3 +30,5 @@ export const TaskPage: React.FC<TaskPageProperties> = ({ data, currentTaskID }) 
     </div>
   );
 };
+
+export default TaskPage;

@@ -5,7 +5,6 @@ import UserItem from "@/shared/components/UserItem/UserItem";
 import TaskItem from "@/shared/components/TaskItem/TaskItem";
 import { User } from "@/services/userService";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 interface UsersPageProperties {
   data: User[];
@@ -24,40 +23,43 @@ export const UsersPage: React.FC<UsersPageProperties> = ({ data, isLoading, erro
     deleteTask(id);
   };
   return (
-    <div className={styles.container}>
-      <ol className={styles.userList}>
-        {error && <div>Error: {error}</div>}
-        {data?.map((user) => (
-          <li onClick={() => getUserTasks(user.id)} key={user.id}>
-            <UserItem>{user.name}</UserItem>
-          </li>
-        ))}
-      </ol>
-      {tasks[0] && (
+    <>
+      <h2 className={styles.title}>Пользователи</h2>
+      <div className={styles.container}>
         <ol className={styles.userList}>
           {error && <div>Error: {error}</div>}
-          {tasks
-            ?.sort((a, b) => {
-              if (a.completed === b.completed) return 0;
-              return a.completed ? 1 : -1;
-            })
-            .map((task, index) => (
-              <div className={styles.task} key={task.id}>
-                <Link href={`/task_info/${task.id}`}>
-                  <li>
-                    <TaskItem count={index + 1} completed={task.completed}>
-                      {task.title}
-                    </TaskItem>
-                  </li>
-                </Link>
-                <button onClick={() => deleteUserTask(task.id)} className={styles.deleteButton} type="button">
-                  X
-                </button>
-              </div>
-            ))}
+          {data?.map((user) => (
+            <li onClick={() => getUserTasks(user.id)} key={user.id}>
+              <UserItem>{user.name}</UserItem>
+            </li>
+          ))}
         </ol>
-      )}
-    </div>
+        {tasks[0] && (
+          <ol className={styles.userList}>
+            {error && <div>Error: {error}</div>}
+            {tasks
+              ?.sort((a, b) => {
+                if (a.completed === b.completed) return 0;
+                return a.completed ? 1 : -1;
+              })
+              .map((task, index) => (
+                <div className={styles.task} key={task.id}>
+                  <Link href={`/task_info/${task.id}`}>
+                    <li>
+                      <TaskItem count={index + 1} completed={task.completed}>
+                        {task.title}
+                      </TaskItem>
+                    </li>
+                  </Link>
+                  <button onClick={() => deleteUserTask(task.id)} className={styles.deleteButton} type="button">
+                    X
+                  </button>
+                </div>
+              ))}
+          </ol>
+        )}
+      </div>
+    </>
   );
 };
 
